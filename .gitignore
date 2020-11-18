@@ -1,1 +1,1 @@
-elpa auto-save-list
+elpa auto-save-list .git #init.el# .gitignore .gitignore~
