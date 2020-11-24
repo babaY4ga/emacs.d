@@ -9,8 +9,8 @@
 (setq inhibit-splash-screen 1)
 
 (load-theme 'nord 1)
-(setq default-frame-alist
-      '((height . 80) (width . 120) (menu-bar-lines . 10) (tool-bar-lines . 0)))
+;;(setq default-frame-alist
+;;    '((height . 80) (width . 120) (menu-bar-lines . 10) (tool-bar-lines . 0)))
 
 (add-to-list 'default-frame-alist '(font . "Hack-11" ))
 (set-face-attribute 'default t :font "Hack-11" )
