@@ -7,6 +7,7 @@
 (scroll-bar-mode -1)
 (global-linum-mode 1)
 (setq inhibit-splash-screen 1)
+(setq make-backup-files nil)
 
 (load-theme 'nord 1)
 (setq default-frame-alist
