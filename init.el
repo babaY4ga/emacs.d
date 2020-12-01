@@ -8,20 +8,22 @@
 (global-linum-mode 1)
 (setq inhibit-splash-screen 1)
 (setq make-backup-files nil)
-
-(load-theme 'nord 1)
+(setq-default c-basic-offset 4)
 (setq default-frame-alist
-    '((height . 80) (width . 120) (menu-bar-lines . 10) (tool-bar-lines . 0)))
+      '((height . 80) (width . 120) (menu-bar-lines . 10) (tool-bar-lines . 0)))
 
 (add-to-list 'default-frame-alist '(font . "Hack-11" ))
 (set-face-attribute 'default t :font "Hack-11" )
+
+;; (load-theme 'nord 1)
 
 ;;remove the bacground color in vue-mode
 ;; (add-hook 'mmm-mode-hook
 ;;           (lambda ()
 ;;             (set-face-background 'mmm-default-submode-face nil)))
 
-(setq-default c-basic-offset 4)
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
