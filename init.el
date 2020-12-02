@@ -30,7 +30,15 @@
 
 ;; try
 (use-package try
-	     :ensure t)
+  :ensure t)
+
+;; which-key
+(use-package which-key
+  :ensure t)
+
+(add-to-list 'load-path "path/to/which-key.el")
+(require 'which-key)
+(which-key-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
