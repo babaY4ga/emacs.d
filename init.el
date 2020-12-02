@@ -22,8 +22,15 @@
 ;;           (lambda ()
 ;;             (set-face-background 'mmm-default-submode-face nil)))
 
+(package-initialize)
 
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
+;; try
+(use-package try
+	     :ensure t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
