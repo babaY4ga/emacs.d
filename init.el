@@ -18,8 +18,6 @@
 (add-to-list 'default-frame-alist '(font . "Hack-11" ))
 (set-face-attribute 'default t :font "Hack-11" )
 
-(load-theme 'nord 1)
-
 ;;remove the bacground color in vue-mode
 ;; (add-hook 'mmm-mode-hook
 ;;           (lambda ()
@@ -39,9 +37,15 @@
 (use-package which-key
   :ensure t)
 
+(add-to-list 'load-path "path/to/which-key.el")
+(require 'which-key)
+(which-key-mode)
 
+;; personally like this one
 (use-package nord-theme
   :ensure t)
+
+(load-theme 'nord 1)
 
 (use-package web-mode
   :ensure t)
@@ -49,6 +53,7 @@
 (use-package js2-mode
   :ensure t)
 
+;; swiper stuff
 ;; should install councel before swiper
 (use-package counsel
   :ensure t)
@@ -78,26 +83,6 @@
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
-
-(add-to-list 'load-path "path/to/which-key.el")
-(require 'which-key)
-(which-key-mode)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" default))
- '(package-selected-packages
-   '(councel yasnippet format-all vue-mode js2-mode nord-theme)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;; web-mode configs
 (require 'web-mode)
