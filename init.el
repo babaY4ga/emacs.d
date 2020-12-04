@@ -2,6 +2,7 @@
 			 ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 (setq backup-directory-alist (quote (("." . "~/.backups"))))
 
 (delete-selection-mode 1)
@@ -18,16 +19,17 @@
 (add-to-list 'default-frame-alist '(font . "Hack-11" ))
 (set-face-attribute 'default t :font "Hack-11" )
 
-;;remove the bacground color in vue-mode
-;; (add-hook 'mmm-mode-hook
-;;           (lambda ()
-;;             (set-face-background 'mmm-default-submode-face nil)))
-
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+
+;; personally like this one
+(use-package nord-theme
+  :ensure t)
+(load-theme 'nord 1)
 
 ;; try
 (use-package try
@@ -41,14 +43,11 @@
 (require 'which-key)
 (which-key-mode)
 
-;; personally like this one
-(use-package nord-theme
-  :ensure t)
-
-(load-theme 'nord 1)
-
+;; web-mode configs
 (use-package web-mode
   :ensure t)
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 
 (use-package js2-mode
   :ensure t)
@@ -87,9 +86,14 @@
 
 ;; auto-complete
 (use-package auto-complete
-  :ensure t)
+  :ensure t
+  :init
+  (progn
+    (ac-config-default)
+    (global-auto-complete-mode t)
+    ))
 
-;; web-mode configs
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
-
+;; avy
+(use-package avy
+  :ensure t
+  :bind ("M-g e" . avy-goto-word-0))
