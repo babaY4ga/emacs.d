@@ -1,3 +1,5 @@
+;;; Code:
+
 (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
 			 ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 
@@ -14,7 +16,7 @@
 (setq make-backup-files nil)
 (setq-default c-basic-offset 4)
 (setq default-frame-alist
-      '((height . 80) (width . 120) (menu-bar-lines . 10) (tool-bar-lines . 0)))
+      '((height . 65) (width . 100) (menu-bar-lines . 10) (tool-bar-lines . 0)))
 
 (add-to-list 'default-frame-alist '(font . "Hack-11" ))
 (set-face-attribute 'default t :font "Hack-11" )
@@ -31,6 +33,10 @@
   :ensure t)
 (load-theme 'nord 1)
 
+(use-package spacegray-theme
+  :ensure t)
+;; (load-theme 'spacegray 1)
+
 ;; try
 (use-package try
   :ensure t)
@@ -42,6 +48,11 @@
 (add-to-list 'load-path "path/to/which-key.el")
 (require 'which-key)
 (which-key-mode)
+
+;; fly-check
+(use-package flycheck
+  :ensure t)
+(global-flycheck-mode)
 
 ;; web-mode configs
 (use-package web-mode
@@ -97,3 +108,18 @@
 (use-package avy
   :ensure t
   :bind ("M-g e" . avy-goto-word-0))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("a6fc75241bcc7ce6f68dcfd0de2d4c4bd804d0f8cd3a9f08c3a07654160e9abe" "62b5c93e1dab499efc36ed0a1955d21d859efd8582da7bacc74a8f95a86f6c41" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" "3cc2385c39257fed66238921602d8104d8fd6266ad88a006d0a4325336f5ee02" "37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" default))
+ '(package-selected-packages
+   '(spacegray-theme which-key web-mode use-package try paredit nord-theme js2-mode counsel avy auto-complete)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background nil)))))
